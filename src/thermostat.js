@@ -1,7 +1,7 @@
 'user strict';
 
-//This is an object contructor
-//with a temperatur property
+//This is an object constructor
+//This type of function creates an object with properties
 function Thermostat(){
   this.MINIMUM_TEMPERATURE = 10;
   this.powerSavingMode = true;
@@ -28,6 +28,7 @@ Thermostat.prototype.down = function(){
     this.temperature -= 1;
 }
 //it returns a boolean true/false
+//strict comparator ===
 Thermostat.prototype.isMinimumTemperature = function(){
   return this.temperature === this.MINIMUM_TEMPERATURE;
 }
@@ -39,6 +40,10 @@ Thermostat.prototype.switchPowerSavingModeOff = function(){
 }
 Thermostat.prototype.switchPowerSavingModeOn = function(){
   this.powerSavingMode = true;
+  if (this.temperature > this.MAX_LIMIT_PSM_ON){
+    this.temperature = 25
+  }
+  //this.powerSavingMode = true;
 }
 Thermostat.prototype.isMaximumTemperature = function(){
   if (this.isPowerSavingModeOn() === false){
@@ -49,12 +54,12 @@ Thermostat.prototype.isMaximumTemperature = function(){
 Thermostat.prototype.resetTemperature = function(){
   this.temperature = this.DEFAULT_TEMPERATURE;
 }
-Thermostat.prototype.energyUsage = function () {
+Thermostat.prototype.energyUsage = function(){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'low-usage';
-  }
-  if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.MAX_LIMIT_PSM_ON) {
+  } else if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.MAX_LIMIT_PSM_ON) {
     return 'medium-usage';
-  }
-  return 'high-usage';
-}
+  } else {
+    return 'high-usage' ;
+};
+};
