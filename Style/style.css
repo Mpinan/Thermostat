@@ -1,5 +1,5 @@
 .low-usage {
-  color: green;
+  color: white;
 }
 
 .medium-usage {
@@ -15,4 +15,48 @@
   margin: 20px auto;
   padding: 50px;
   border-width: 10px;
+  border: solid blue 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.vertical-container {
+  height: 30px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+h1 {
+  background-color: green;
+}
+
+div {
+  background-color: lightblue;
+}
+
+p {
+  background-color: yellow;
+}
+body {
+  background-image: url("https://mobserver.co.za/wp-content/uploads/sites/92/2017/10/Weather-520x400.jpg" );
+  background-size: 100%;
+}
+
+.slider {
+  width: 50%;
+  height: 15px;
+  background: #D3D3D3;
+  opacity: 10;
 }
